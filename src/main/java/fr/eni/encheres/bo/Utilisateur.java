@@ -55,7 +55,7 @@ public class Utilisateur {
 	}
 
 	/* GETTER */
-	public int getno_utilisateur() {
+	public int getNo_utilisateur() {
 		return no_utilisateur;
 	}
 
@@ -69,18 +69,6 @@ public class Utilisateur {
 
 	public String getPrenom() {
 		return prenom;
-	}
-
-	public void setno_utilisateur(int no_utilisateur) {
-		this.no_utilisateur = no_utilisateur;
-	}
-
-	public void setPseudo(String pseudo) {
-		this.pseudo = pseudo;
-	}
-
-	public void setNom(String nom) {
-		this.nom = nom;
 	}
 
 	public String getEmail() {
@@ -120,6 +108,18 @@ public class Utilisateur {
 	}
 
 	/* SETTER */
+	public void setNo_utilisateur(int no_utilisateur) {
+		this.no_utilisateur = no_utilisateur;
+	}
+
+	public void setPseudo(String pseudo) {
+		this.pseudo = pseudo;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
@@ -159,5 +159,8 @@ public class Utilisateur {
 				+ ", rue='" + rue + '\'' + ", codePostal='" + codePostal + '\'' + ", ville='" + ville + '\''
 				+ ", motDePasse='" + motDePasse + '\'' + ", credit=" + credit + ", administrateur=" + administrateur
 				+ '}';
+	}
+
+	public void setNom() {
 	}
 }
