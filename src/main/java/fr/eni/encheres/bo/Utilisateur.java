@@ -55,7 +55,7 @@ public class Utilisateur {
 	}
 
 	/* GETTER */
-	public int getno_utilisateur() {
+	public int getNo_utilisateur() {
 		return no_utilisateur;
 	}
 
@@ -71,7 +71,7 @@ public class Utilisateur {
 		return prenom;
 	}
 
-	public void setno_utilisateur(int no_utilisateur) {
+	public void setNo_utilisateur(int no_utilisateur) {
 		this.no_utilisateur = no_utilisateur;
 	}
 

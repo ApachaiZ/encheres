@@ -8,7 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class CreerCompteDAOJdbcImpl implements CreerCompteDAO {
+public class UtilisateurDAOjdbcImpl implements UtilisateurDAO {
 
     private static final String INSERT_UTILISATEUR="INSERT INTO UTILISATEURS (pseudo, nom, prenom, email, telephone, rue, code_postal," +
             " ville, mot_de_passe, credit, administrateur) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
@@ -41,7 +41,7 @@ public class CreerCompteDAOJdbcImpl implements CreerCompteDAO {
             pstmt.executeUpdate();
             ResultSet rs = pstmt.getGeneratedKeys();
             if(rs.next()){
-                utilisateur.setno_utilisateur(rs.getInt(1));
+                utilisateur.setNo_utilisateur(rs.getInt(1));
             }
             con.commit();
         } catch (Exception e) {

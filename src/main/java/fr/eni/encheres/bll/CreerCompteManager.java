@@ -1,11 +1,11 @@
 package fr.eni.encheres.bll;
 
 import fr.eni.encheres.bo.Utilisateur;
-import fr.eni.encheres.dal.dao.CreerCompteDAO;
+import fr.eni.encheres.dal.dao.UtilisateurDAO;
 import fr.eni.encheres.dal.dao.DAOFactory;
 
 public class CreerCompteManager {
-    private CreerCompteDAO creerCompteDAO;
+    private UtilisateurDAO creerCompteDAO;
 
     public CreerCompteManager() {
         creerCompteDAO = DAOFactory.getCreerCompteDAO();
