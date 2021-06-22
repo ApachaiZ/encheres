@@ -47,7 +47,7 @@ public class ServletCreerCompte extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/afficherProfil.jsp");// Verifier adresse du path
+        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/pageConnexion.jsp");// Verifier adresse du path
         rd.forward(request, response);
         }
 }
