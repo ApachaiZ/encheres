@@ -1,6 +1,6 @@
 package fr.eni.encheres.servlets;
 
-import fr.eni.encheres.bll.CreerCompteManager;
+import fr.eni.encheres.bll.UtilisateurManager;
 import fr.eni.encheres.bo.Utilisateur;
 
 import javax.servlet.RequestDispatcher;
@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name="/ServletCreerCompte", value="/servletCreerCompte")
+@WebServlet(name="ServletCreerCompte", value="/servletCreerCompte")
 public class ServletCreerCompte extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
@@ -21,8 +21,8 @@ public class ServletCreerCompte extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/creerCompte.jsp");// Verifier adresse du path
-        rd.forward(request, response);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/WEB-INF/creerCompte.jsp");// Verifier adresse du path
+        requestDispatcher.forward(request, response);
     }
 
     @Override
@@ -40,14 +40,14 @@ public class ServletCreerCompte extends HttpServlet {
             String ville = request.getParameter("ville");
             String mot_de_passe = request.getParameter("mot_de_passe");
 
-            CreerCompteManager creerCompteManager = new CreerCompteManager();
-            Utilisateur utilisateur = creerCompteManager.inserer(pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe, 0, false);
+            UtilisateurManager utilisateurManager = new UtilisateurManager();
+            Utilisateur utilisateur = utilisateurManager.inserer(pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe, 0, false);
             request.setAttribute("utilisateur", utilisateur);
 
         } catch (Exception e) {
             e.printStackTrace();
         }
-        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/pageConnexion.jsp");// Verifier adresse du path
-        rd.forward(request, response);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/WEB-INF/accueil.jsp");// Verifier adresse du path
+        requestDispatcher.forward(request, response);
         }
 }
