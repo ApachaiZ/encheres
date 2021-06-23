@@ -15,13 +15,11 @@ import java.io.IOException;
 public class ServletAfficherProfil extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
-
         try{
             String pseudo =request.getParameter("pseudo");
             UtilisateurManager utilisateurManager = new UtilisateurManager();
@@ -37,7 +35,6 @@ public class ServletAfficherProfil extends HttpServlet {
             request.setAttribute("villeProfil", utilisateur.getVille());
             RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/afficherProfil.jsp");
             rd.forward(request, response);
-
         } catch (Exception e) {
             e.printStackTrace();
         }
