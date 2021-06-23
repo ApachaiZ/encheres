@@ -22,7 +22,7 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
         Utilisateur utilisateur = new Utilisateur();
         try {
             con = ConnectionProvider.getConnection();
-            prepareStatement = con.prepareStatement(SELECT_UTILISATEUR, RETURN_GENERATED_KEYS);
+            prepareStatement = con.prepareStatement(SELECT_UTILISATEUR);
             prepareStatement.setString(1, pseudo);
             prepareStatement.setString(2, mot_de_passe);
             ResultSet resultSet = prepareStatement.executeQuery();

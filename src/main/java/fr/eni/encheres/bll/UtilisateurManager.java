@@ -22,5 +22,4 @@ public class UtilisateurManager {
     public Utilisateur afficher(String pseudo){
         return utilisateurDAO.afficher(pseudo);
     }
-
 }
