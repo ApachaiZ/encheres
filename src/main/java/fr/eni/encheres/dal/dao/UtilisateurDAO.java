@@ -7,4 +7,6 @@ public interface UtilisateurDAO {
                                String code_postal, String ville, String mot_de_passe, int credit, Boolean administrateur);
 
     Utilisateur select(String pseudo,String mot_de_passe);
+
+    Utilisateur afficher(String pseudo);
 }

@@ -1,9 +1,5 @@
 package fr.eni.encheres.servlets.redirection;
 
-import fr.eni.encheres.bll.CreerCompteManager;
-import fr.eni.encheres.bo.Utilisateur;
-
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
