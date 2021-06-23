@@ -15,13 +15,14 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
     private static final String SELECT_UTILISATEUR = "SELECT no_utilisateur, pseudo, nom, prenom, email, telephone, rue, code_postal, " +
             "ville, mot_de_passe, credit, administrateur FROM UTILISATEURS WHERE pseudo = ? AND mot_de_passe = ?";
 
+
     public Utilisateur select(String pseudo, String mot_de_passe) {
         Connection con = null;
         PreparedStatement prepareStatement;
         Utilisateur utilisateur = new Utilisateur();
         try {
             con = ConnectionProvider.getConnection();
-            prepareStatement = con.prepareStatement(SELECT_UTILISATEUR, RETURN_GENERATED_KEYS);
+            prepareStatement = con.prepareStatement(SELECT_UTILISATEUR);
             prepareStatement.setString(1, pseudo);
             prepareStatement.setString(2, mot_de_passe);
             ResultSet resultSet = prepareStatement.executeQuery();
@@ -90,6 +91,37 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
+            e.printStackTrace();
+        }
+        return utilisateur;
+    }
+
+    private static final String AUTRE_PROFIL = "SELECT  pseudo, nom, prenom, email, telephone, rue, code_postal, ville, telephone " +
+            "from UTILISATEURS where pseudo = ?";
+
+    public Utilisateur afficher(String pseudo) {
+
+        Connection con = null;
+        PreparedStatement prepareStatement;
+        Utilisateur utilisateur = new Utilisateur();
+        try {
+            con = ConnectionProvider.getConnection();
+            prepareStatement = con.prepareStatement(AUTRE_PROFIL);
+            prepareStatement.setString(1, pseudo);
+            ResultSet resultSet = prepareStatement.executeQuery();
+
+            if(resultSet.next()){
+                utilisateur = new Utilisateur();
+                utilisateur.setPseudo(resultSet.getString("pseudo"));
+                utilisateur.setNom(resultSet.getString("nom"));
+                utilisateur.setPrenom(resultSet.getString("prenom"));
+                utilisateur.setEmail(resultSet.getString("email"));
+                utilisateur.setTelephone(resultSet.getString("telephone"));
+                utilisateur.setRue(resultSet.getString("rue"));
+                utilisateur.setCodePostal(resultSet.getString("code_postal"));
+                utilisateur.setVille(resultSet.getString("ville"));
+            }
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return utilisateur;

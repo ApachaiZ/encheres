@@ -1,11 +1,5 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: cedri
-  Date: 21/06/2021
-  Time: 17:17
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
     <title>Affichage du profil</title>
@@ -26,11 +20,7 @@
 
                 <input type="text" name="pseudo" id="pseudo" class="input-text" placeholder="Vendeur recherché"
                        required>
-                <div class="row m-5">
-                    <div class="col-sm-6 ">
-                        <button type="submit" style="align-content: center" class="btn-toolbar  btn-outline-secondary btn-lg">Rechercher</button>
-                    </div>
-                </div>
+
                 <h3>Profil de ${pseudoProfil}</h3>
 
                 <div class="form-row-total">
@@ -47,9 +37,9 @@
                         <br>
                         <p>${rueProfil}</p>
                         <br>
-                        <p>${codePostalProfil} ${villeProfil}</p>
+                        <p>${codePostalProfil}  ${villeProfil}</p>
                         <br>
-                        <a href="accueil" ><button type="button" class="bouton">Retour</button></a>
+                        <a href="" ><button type="button" class="bouton">Retour</button></a>
                     </div>
                 </div>
             </form>

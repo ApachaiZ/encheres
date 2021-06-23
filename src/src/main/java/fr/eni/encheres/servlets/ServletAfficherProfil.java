@@ -23,20 +23,21 @@ public class ServletAfficherProfil extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
 
         try{
-            String pseudo =request.getParameter("pseudo");
-            UtilisateurManager utilisateurManager = new UtilisateurManager();
-            Utilisateur utilisateur = utilisateurManager.afficher(pseudo);
+        String pseudo =request.getParameter("pseudo");
+        Utilisateur utilisateur = null;
+        UtilisateurManager utilisateurManager = new UtilisateurManager();
+        Utilisateur autreProfil = utilisateurManager.afficherProfil(pseudo);
 
-            request.setAttribute("pseudoProfil", utilisateur.getPseudo());
-            request.setAttribute("nomProfil", utilisateur.getNom());
-            request.setAttribute("prenomProfil", utilisateur.getPrenom());
-            request.setAttribute("emailProfil", utilisateur.getEmail());
-            request.setAttribute("telephoneProfil", utilisateur.getTelephone());
-            request.setAttribute("rueProfil", utilisateur.getRue());
-            request.setAttribute("codePostalProfil", utilisateur.getCodePostal());
-            request.setAttribute("villeProfil", utilisateur.getVille());
-            RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/afficherProfil.jsp");
-            rd.forward(request, response);
+        request.setAttribute("pseudoProfil", autreProfil.getPseudo());
+        request.setAttribute("nomProfil", autreProfil.getNom());
+        request.setAttribute("prenomProfil", autreProfil.getPrenom());
+        request.setAttribute("emailProfil", autreProfil.getEmail());
+        request.setAttribute("telephoneProfil", autreProfil.getTelephone());
+        request.setAttribute("rueProfil", autreProfil.getRue());
+        request.setAttribute("codePostalProfil", autreProfil.getCodePostal());
+        request.setAttribute("villeProfil", autreProfil.getVille());
+        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/AfficherProfil.jsp");
+        rd.forward(request, response);
 
         } catch (Exception e) {
             e.printStackTrace();
