@@ -1,7 +1,7 @@
 package fr.eni.encheres.servlets;
 
 
-import fr.eni.encheres.bll.ConnexionManager;
+import fr.eni.encheres.bll.UtilisateurManager;
 import fr.eni.encheres.bo.Utilisateur;
 
 import javax.servlet.*;
@@ -23,8 +23,8 @@ public class ServletConnexion extends HttpServlet {
         try{
             String pseudo = request.getParameter("pseudo");
             String mot_de_passe = request.getParameter("mot_de_passe");
-            ConnexionManager connexionManager = new ConnexionManager();
-            Utilisateur utilisateur = connexionManager.select(pseudo, mot_de_passe);
+            UtilisateurManager utilisateurConnexion = new UtilisateurManager();
+            Utilisateur utilisateur = utilisateurConnexion.select(pseudo, mot_de_passe);
             if (utilisateur.getEmail() != null) {
                 RequestDispatcher requestDispatcher = request.getRequestDispatcher("/WEB-INF/success.jsp");
                 requestDispatcher.forward(request, response);

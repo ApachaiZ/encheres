@@ -1,6 +1,6 @@
 package fr.eni.encheres.servlets;
 
-import fr.eni.encheres.bll.CreerCompteManager;
+import fr.eni.encheres.bll.UtilisateurManager;
 import fr.eni.encheres.bo.Utilisateur;
 
 import javax.servlet.RequestDispatcher;
@@ -40,8 +40,8 @@ public class ServletCreerCompte extends HttpServlet {
             String ville = request.getParameter("ville");
             String mot_de_passe = request.getParameter("mot_de_passe");
 
-            CreerCompteManager creerCompteManager = new CreerCompteManager();
-            Utilisateur utilisateur = creerCompteManager.inserer(pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe, 0, false);
+            UtilisateurManager utilisateurManager = new UtilisateurManager();
+            Utilisateur utilisateur = utilisateurManager.inserer(pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe, 0, false);
             request.setAttribute("utilisateur", utilisateur);
 
         } catch (Exception e) {

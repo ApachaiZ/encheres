@@ -4,11 +4,15 @@ import fr.eni.encheres.bo.Utilisateur;
 import fr.eni.encheres.dal.dao.UtilisateurDAO;
 import fr.eni.encheres.dal.dao.DAOFactory;
 
-public class CreerCompteManager {
+public class UtilisateurManager {
     private final UtilisateurDAO utilisateurDAO;
 
-    public CreerCompteManager() {
+    public UtilisateurManager() {
         utilisateurDAO = DAOFactory.getCreerCompteDAO();
+    }
+
+    public Utilisateur select(String pseudo, String mot_de_passe) {
+        return utilisateurDAO.select(pseudo, mot_de_passe);
     }
 
     public Utilisateur inserer(String pseudo, String nom, String prenom, String email, String telephone, String rue, String code_postal, String ville, String mot_de_passe, int credit, Boolean administrateur) {
