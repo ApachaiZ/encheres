@@ -1,9 +1,9 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Page d'inscription au site d'ENI-enchères</title>
+    <title>Page de modification du compte utilisateur</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
           integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
@@ -15,14 +15,14 @@
 <div class="container-fluid">
     <div class="page-content">
         <div class="form-v9-content">
-            <form class="form-detail" action="servletCreerCompte" method="post">
-
+            <form class="form-detail" action="servletModifierCompte" method="post">
                 <h2>ENI-Enchères</h2>
-                <h2>Formulaire d'inscription</h2>
-
+                <h2>Modification du compte</h2>
                 <div class="form-row-total">
                     <div class="col-6">
-                        <input type="text" name="pseudo" id="pseudo" class="input-text" placeholder="Votre Pseudo"
+                        <input type="text" name="pseudo" id="pseudo" class="input-text" placeholder="Votre Pseudo actuel"
+                               required>
+                        <input type="text" name="nouveau_pseudo" id="nouveau pseudo" class="input-text" placeholder="Votre Nouveau Pseudo"
                                required>
                         <input type="text" name="prenom" id="prenom" class="input-text" placeholder="Votre Prénom"
                                required>
@@ -30,11 +30,13 @@
                                placeholder="Votre téléphone" required>
                         <input type="text" name="code_postal" id="code_postal" class="input-text"
                                placeholder="Votre Code Postal" required>
-                        <input type="password" name="mot_de_passe" id="mot_de_passe" class="input-text"
+                        <input type="password" name="nouveau_mot_de_passe" id="nouveau_mot_de_passe" class="input-text"
                                placeholder="Votre mot de passe" required>
                     </div>
 
                     <div class="col-6">
+                        <input type="password" name="mot_de_passe" id="mot_de_passe" class="input-text"
+                               placeholder="Votre mot de passe actuel" required>
                         <input type="text" name="nom" id="nom" class="input-text" placeholder="Votre Nom" required>
                         <input type="text" name="email" id="text" class="input-text" placeholder="Votre Email" required>
                         <input type="text" name="rue" id="rue" class="input-text" placeholder="Votre Rue" required>
@@ -48,10 +50,6 @@
                 <div class="form-row-total">
                     <div class="col-6">
                         <input type="submit" name="creer" class="bouton" value="Créer">
-                    </div>
-                    <br>
-                    <div class="col-6">
-                        <input type="submit" name="annuler" class="bouton" value="Annuler">
                     </div>
                 </div>
             </form>
