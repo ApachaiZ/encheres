@@ -16,6 +16,7 @@
     <h1>Accueil</h1>
     <h2><a href="servletOpenConnexion">Connection</a></h2>
     <h2><a href="servletOpenCreerCompte">Inscription</a></h2>
+    <h2><a href="servletOpenAfficherProfil">Recherche vendeur</a></h2>
 </div>
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

@@ -23,14 +23,20 @@ public class ServletConnexion extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         request.setCharacterEncoding("UTF-8");
-        String pseudo = request.getParameter("pseudo");
-        String mot_de_passe = request.getParameter("mot_de_passe");
-        UtilisateurManager utilisateurConnexion = new UtilisateurManager();
-        Utilisateur utilisateur = utilisateurConnexion.select(pseudo, mot_de_passe);
-        try {
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/WEB-INF/success.jsp");
-            requestDispatcher.forward(request, response);
-        } catch (ServletException e) {
+        try{
+            String pseudo = request.getParameter("pseudo");
+            String mot_de_passe = request.getParameter("mot_de_passe");
+            UtilisateurManager utilisateurConnexion = new UtilisateurManager();
+            Utilisateur utilisateur = utilisateurConnexion.select(pseudo, mot_de_passe);
+            if (utilisateur.getEmail() != null) {
+                RequestDispatcher requestDispatcher = request.getRequestDispatcher("/WEB-INF/success.jsp");
+                requestDispatcher.forward(request, response);
+            }
+            else {
+                RequestDispatcher requestDispatcher = request.getRequestDispatcher("/WEB-INF/error.jsp");
+                requestDispatcher.forward(request, response);
+            }
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
