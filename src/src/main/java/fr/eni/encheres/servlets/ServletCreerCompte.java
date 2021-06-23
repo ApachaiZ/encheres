@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name="ServletCreerCompte", value="/servletCreerCompte")
+@WebServlet(name="/ServletCreerCompte", value="/servletCreerCompte")
 public class ServletCreerCompte extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
@@ -21,8 +21,8 @@ public class ServletCreerCompte extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/WEB-INF/creerCompte.jsp");// Verifier adresse du path
-        requestDispatcher.forward(request, response);
+        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/CreerCompte.jsp");// Verifier adresse du path
+        rd.forward(request, response);
     }
 
     @Override
@@ -47,7 +47,7 @@ public class ServletCreerCompte extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/WEB-INF/accueil.jsp");// Verifier adresse du path
-        requestDispatcher.forward(request, response);
+        RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");// Verifier adresse du path
+        rd.forward(request, response);
         }
 }
