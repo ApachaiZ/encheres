@@ -23,6 +23,7 @@ public class ServletSupprimerProfil extends HttpServlet {
         Utilisateur utilisateur = (Utilisateur) session.getAttribute("utilisateur");
         UtilisateurManager utilisateurManager = new UtilisateurManager();
         utilisateurManager.supprimerUtilisateur(utilisateur.getPseudo(), utilisateur.getMotDePasse());
+        request.getSession().invalidate();
         response.sendRedirect("accueil");
     }
 }

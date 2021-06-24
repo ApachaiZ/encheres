@@ -28,13 +28,26 @@ public class ServletConnexion extends HttpServlet {
         try {
             String pseudo = request.getParameter("pseudo");
             String mot_de_passe = request.getParameter("mot_de_passe");
-            UtilisateurManager utilisateurConnexion = new UtilisateurManager();
-            Utilisateur utilisateur = utilisateurConnexion.select(pseudo, mot_de_passe);
-            HttpSession session;
-            session = request.getSession();
-            session.setAttribute("utilisateur", utilisateur);
+            try {
+                UtilisateurManager utilisateurConnexion = new UtilisateurManager();
+                Utilisateur utilisateur = utilisateurConnexion.select(pseudo, mot_de_passe);
+                System.out.println(utilisateur.getPseudo());
+                System.out.println(utilisateur.getPseudo());
+                System.out.println(utilisateur.getPseudo());
+                System.out.println(utilisateur.getPseudo());
+                System.out.println(utilisateur.getPseudo());
+                System.out.println(utilisateur.getPseudo());
 
-            response.sendRedirect("accueil");
+                HttpSession session;
+                session = request.getSession();
+                session.setAttribute("utilisateur", utilisateur);
+                if (utilisateur.getPseudo() == null)
+                    session.invalidate();
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                response.sendRedirect("accueil");
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
