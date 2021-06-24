@@ -33,12 +33,8 @@ public class ServletConnexion extends HttpServlet {
             HttpSession session;
             session = request.getSession();
             session.setAttribute("utilisateur", utilisateur);
-            RequestDispatcher requestDispatcher;
-            if (utilisateur.getEmail() != null)
-                requestDispatcher = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
-            else
-                requestDispatcher = request.getRequestDispatcher("/WEB-INF/error.jsp");
-            requestDispatcher.forward(request, response);
+
+            response.sendRedirect("accueil");
         } catch (Exception e) {
             e.printStackTrace();
         }

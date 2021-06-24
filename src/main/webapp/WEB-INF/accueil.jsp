@@ -14,12 +14,7 @@
 <body class="form-v9">
 <div class="container-fluid">
     <h1>Accueil</h1>
-    <c:if test="${utilisateur.pseudo != null}"> //a changer
-        <h2><a href="servletOpenConnexion">Connection</a></h2>
-    </c:if>
-    <c:if test="${utilisateur.pseudo == null}"> //a changer
-        <h2><a href="servletOpenDeconnexion">Deconnexion</a></h2>
-    </c:if>
+    <h2><a href="${servletCodeco}">${codeco}</a></h2>
     <h2><a href="servletOpenCreerCompte">Inscription</a></h2>
     <h2><a href="servletOpenAfficherProfil">Recherche vendeur</a></h2>
     <h2><a href="servletOpenCompte">Supprimer mon profil</a></h2>
