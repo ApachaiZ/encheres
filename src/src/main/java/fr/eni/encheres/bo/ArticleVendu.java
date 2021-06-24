@@ -46,66 +46,17 @@ public class ArticleVendu {
     }
 
     /**
-     * @return the nom_article
-     */
-    public String getNom_article() {
-        return nom_article;
-    }
-
-    /**
-     * @return the description
-     */
-    public String getDescription() {
-        return description;
-    }
-
-    /**
-     * @return the date_debut_encheres
-     */
-    public Date getDate_debut_encheres() {
-        return date_debut_encheres;
-    }
-
-    /**
-     * @return the date_fin_encheres
-     */
-    public Date getDate_fin_encheres() {
-        return date_fin_encheres;
-    }
-
-    /**
-     * @return the prix_initial
-     */
-    public int getPrix_initial() {
-        return prix_initial;
-    }
-
-    /**
-     * @return the prix_vente
-     */
-    public int getPrix_vente() {
-        return prix_vente;
-    }
-
-    /**
-     * @return the no_utilisateur
-     */
-    public Utilisateur getNo_utilisateur() {
-        return no_utilisateur;
-    }
-
-    /**
-     * @return the no_categorie
-     */
-    public Categorie getNo_categorie() {
-        return no_categorie;
-    }
-
-    /**
      * @param no_article the no_article to set
      */
     public void setNo_article(int no_article) {
         this.no_article = no_article;
+    }
+
+    /**
+     * @return the nom_article
+     */
+    public String getNom_article() {
+        return nom_article;
     }
 
     /**
@@ -116,10 +67,24 @@ public class ArticleVendu {
     }
 
     /**
+     * @return the description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    /**
      * @param description the description to set
      */
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    /**
+     * @return the date_debut_encheres
+     */
+    public Date getDate_debut_encheres() {
+        return date_debut_encheres;
     }
 
     /**
@@ -130,10 +95,24 @@ public class ArticleVendu {
     }
 
     /**
+     * @return the date_fin_encheres
+     */
+    public Date getDate_fin_encheres() {
+        return date_fin_encheres;
+    }
+
+    /**
      * @param date_fin_encheres the date_fin_encheres to set
      */
     public void setDate_fin_encheres(Date date_fin_encheres) {
         this.date_fin_encheres = date_fin_encheres;
+    }
+
+    /**
+     * @return the prix_initial
+     */
+    public int getPrix_initial() {
+        return prix_initial;
     }
 
     /**
@@ -144,6 +123,13 @@ public class ArticleVendu {
     }
 
     /**
+     * @return the prix_vente
+     */
+    public int getPrix_vente() {
+        return prix_vente;
+    }
+
+    /**
      * @param prix_vente the prix_vente to set
      */
     public void setPrix_vente(int prix_vente) {
@@ -151,10 +137,24 @@ public class ArticleVendu {
     }
 
     /**
+     * @return the no_utilisateur
+     */
+    public Utilisateur getNo_utilisateur() {
+        return no_utilisateur;
+    }
+
+    /**
      * @param no_utilisateur the no_utilisateur to set
      */
     public void setNo_utilisateur(Utilisateur no_utilisateur) {
         this.no_utilisateur = no_utilisateur;
+    }
+
+    /**
+     * @return the no_categorie
+     */
+    public Categorie getNo_categorie() {
+        return no_categorie;
     }
 
     /**

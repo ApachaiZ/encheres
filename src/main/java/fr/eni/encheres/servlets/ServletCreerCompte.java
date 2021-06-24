@@ -3,15 +3,13 @@ package fr.eni.encheres.servlets;
 import fr.eni.encheres.bll.UtilisateurManager;
 import fr.eni.encheres.bo.Utilisateur;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name="ServletCreerCompte", value="/servletCreerCompte")
+@WebServlet(name = "ServletCreerCompte", value = "/servletCreerCompte")
 public class ServletCreerCompte extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
@@ -20,16 +18,14 @@ public class ServletCreerCompte extends HttpServlet {
     }
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/WEB-INF/creerCompte.jsp");// Verifier adresse du path
-        requestDispatcher.forward(request, response);
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) {
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         request.setCharacterEncoding("UTF-8");
 
-        try{
+        try {
             String pseudo = request.getParameter("pseudo");
             String nom = request.getParameter("nom");
             String prenom = request.getParameter("prenom");
@@ -47,7 +43,6 @@ public class ServletCreerCompte extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/WEB-INF/accueil.jsp");// Verifier adresse du path
-        requestDispatcher.forward(request, response);
-        }
+        response.sendRedirect("accueil");
+    }
 }

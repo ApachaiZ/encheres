@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name="/ServletCreerCompte", value="/servletCreerCompte")
+@WebServlet(name = "/ServletCreerCompte", value = "/servletCreerCompte")
 public class ServletCreerCompte extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
@@ -29,7 +29,7 @@ public class ServletCreerCompte extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
 
-        try{
+        try {
             String pseudo = request.getParameter("pseudo");
             String nom = request.getParameter("nom");
             String prenom = request.getParameter("prenom");
@@ -49,5 +49,5 @@ public class ServletCreerCompte extends HttpServlet {
         }
         RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");// Verifier adresse du path
         rd.forward(request, response);
-        }
+    }
 }

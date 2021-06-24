@@ -13,5 +13,10 @@
 <body>
 <h1>ERROR</h1>
 <h2>ROUB Y DEAD !</h2>
+<div>
+    <c:if test="${empty sessionScope.utilisateur}">
+        <h2>PAS Connecté</h2>
+    </c:if>
+</div>
 </body>
 </html>

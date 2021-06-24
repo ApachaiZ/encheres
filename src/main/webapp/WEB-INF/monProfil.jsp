@@ -1,14 +1,13 @@
 <%--
   Created by IntelliJ IDEA.
-  User: cedri
-  Date: 21/06/2021
-  Time: 17:17
+  User: yannick
+  Date: 23/06/2021
+  Time: 18:03
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Affichage du profil</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
           integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
@@ -20,40 +19,28 @@
 <div class="container-fluid">
     <div class="page-content">
         <div class="form-v9-content">
-            <form class="form-detail" action="servletAfficherProfil" method="post">
+            <form class="form-detail" action="servletSupprimerProfil" method="post">
 
                 <h2>ENI-Enchères</h2>
 
-                <input type="text" name="pseudo" id="pseudo" class="input-text" placeholder="Vendeur recherché"
-                       required>
-                <div class="row m-5">
-                    <div class="col-sm-6 ">
-                        <button type="submit" style="align-content: center"
-                                class="btn-toolbar  btn-outline-secondary btn-lg">Rechercher
-                        </button>
-                    </div>
-                </div>
-                <h3>Profil de ${pseudoProfil}</h3>
+                <h3>Profil de ${utilisateur.pseudo}</h3>
 
                 <div class="form-row-total">
                     <div class="col">
-                        <p>${pseudoProfil}</p>
                         <br>
-                        <p>${nomProfil}</p>
+                        <p>${utilisateur.nom}</p>
                         <br>
-                        <p>${prenomProfil}</p>
+                        <p>${utilisateur.prenom}</p>
                         <br>
-                        <p>${emailProfil}</p>
+                        <p>${utilisateur.email}</p>
                         <br>
-                        <p>${telephoneProfil}</p>
+                        <p>${utilisateur.telephone}</p>
                         <br>
-                        <p>${rueProfil}</p>
+                        <p>${utilisateur.rue}</p>
                         <br>
-                        <p>${codePostalProfil} ${villeProfil}</p>
+                        <p>${utilisateur.codePostal} ${utilisateur.ville}</p>
                         <br>
-                        <a href="accueil">
-                            <button type="button" class="bouton">Retour</button>
-                        </a>
+                        <button type="submit" class="bouton">Supprimer</button>
                     </div>
                 </div>
             </form>
@@ -69,4 +56,3 @@
         crossorigin="anonymous"></script>
 </body>
 </html>
-

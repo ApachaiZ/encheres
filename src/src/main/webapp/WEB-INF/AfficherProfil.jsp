@@ -37,9 +37,11 @@
                         <br>
                         <p>${rueProfil}</p>
                         <br>
-                        <p>${codePostalProfil}  ${villeProfil}</p>
+                        <p>${codePostalProfil} ${villeProfil}</p>
                         <br>
-                        <a href="" ><button type="button" class="bouton">Retour</button></a>
+                        <a href="">
+                            <button type="button" class="bouton">Retour</button>
+                        </a>
                     </div>
                 </div>
             </form>

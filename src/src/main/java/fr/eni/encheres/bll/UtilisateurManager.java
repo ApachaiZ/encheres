@@ -17,7 +17,7 @@ public class UtilisateurManager {
         return utilisateurDAO.inserer(pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe, credit, administrateur);
     }
 
-    public Utilisateur afficherProfil(String pseudo){
+    public Utilisateur afficherProfil(String pseudo) {
         //UtilisateurManager utilisateurDAO = null;
         return utilisateurDAO.afficherProfil(pseudo);
     }

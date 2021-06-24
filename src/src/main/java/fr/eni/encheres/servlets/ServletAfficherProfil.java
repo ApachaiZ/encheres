@@ -22,22 +22,22 @@ public class ServletAfficherProfil extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
 
-        try{
-        String pseudo =request.getParameter("pseudo");
-        Utilisateur utilisateur = null;
-        UtilisateurManager utilisateurManager = new UtilisateurManager();
-        Utilisateur autreProfil = utilisateurManager.afficherProfil(pseudo);
+        try {
+            String pseudo = request.getParameter("pseudo");
+            Utilisateur utilisateur = null;
+            UtilisateurManager utilisateurManager = new UtilisateurManager();
+            Utilisateur autreProfil = utilisateurManager.afficherProfil(pseudo);
 
-        request.setAttribute("pseudoProfil", autreProfil.getPseudo());
-        request.setAttribute("nomProfil", autreProfil.getNom());
-        request.setAttribute("prenomProfil", autreProfil.getPrenom());
-        request.setAttribute("emailProfil", autreProfil.getEmail());
-        request.setAttribute("telephoneProfil", autreProfil.getTelephone());
-        request.setAttribute("rueProfil", autreProfil.getRue());
-        request.setAttribute("codePostalProfil", autreProfil.getCodePostal());
-        request.setAttribute("villeProfil", autreProfil.getVille());
-        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/AfficherProfil.jsp");
-        rd.forward(request, response);
+            request.setAttribute("pseudoProfil", autreProfil.getPseudo());
+            request.setAttribute("nomProfil", autreProfil.getNom());
+            request.setAttribute("prenomProfil", autreProfil.getPrenom());
+            request.setAttribute("emailProfil", autreProfil.getEmail());
+            request.setAttribute("telephoneProfil", autreProfil.getTelephone());
+            request.setAttribute("rueProfil", autreProfil.getRue());
+            request.setAttribute("codePostalProfil", autreProfil.getCodePostal());
+            request.setAttribute("villeProfil", autreProfil.getVille());
+            RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/AfficherProfil.jsp");
+            rd.forward(request, response);
 
         } catch (Exception e) {
             e.printStackTrace();

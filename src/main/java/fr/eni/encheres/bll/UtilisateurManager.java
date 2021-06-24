@@ -1,8 +1,8 @@
 package fr.eni.encheres.bll;
 
 import fr.eni.encheres.bo.Utilisateur;
-import fr.eni.encheres.dal.dao.UtilisateurDAO;
 import fr.eni.encheres.dal.dao.DAOFactory;
+import fr.eni.encheres.dal.dao.UtilisateurDAO;
 
 public class UtilisateurManager {
     private final UtilisateurDAO utilisateurDAO;
@@ -19,7 +19,11 @@ public class UtilisateurManager {
         return utilisateurDAO.inserer(pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe, credit, administrateur);
     }
 
-    public Utilisateur afficher(String pseudo){
+    public Utilisateur afficher(String pseudo) {
         return utilisateurDAO.afficher(pseudo);
+    }
+
+    public void supprimerUtilisateur(String pseudo, String mot_de_passe) {
+        utilisateurDAO.supprimerUtilisateur(pseudo, mot_de_passe);
     }
 }
