@@ -18,6 +18,8 @@
     <h2><a href="servletOpenCreerCompte">Inscription</a></h2>
     <h2><a href="servletOpenAfficherProfil">Recherche vendeur</a></h2>
     <h2><a href="servletOpenCompte">Supprimer mon profil</a></h2>
+    <h2><a href="servletOpenModifierCompte">Modifier compte</a></h2>
+
 </div>
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

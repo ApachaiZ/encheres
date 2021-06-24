@@ -14,13 +14,11 @@ import java.io.IOException;
 public class ServletAfficherProfil extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) {
-
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         request.setCharacterEncoding("UTF-8");
-
         try {
             String pseudo = request.getParameter("pseudo");
             UtilisateurManager utilisateurManager = new UtilisateurManager();

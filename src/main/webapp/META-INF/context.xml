@@ -1,10 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
-
 <Context >
 <Resource
         name="jdbc/pool_cnx"
         type="javax.sql.DataSource"
-        url="jdbc:sqlserver://localhost:63226\ENI_DB;database=ENCHERES"
+        url="jdbc:sqlserver://localhost\ENI_DB:63226;database=Encheres"
         username="toto"
         password="toto42sh"
         maxTotal="100"
