@@ -20,6 +20,9 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
             "from UTILISATEURS where pseudo = ?";
     private static final String DELETE = "DELETE FROM UTILISATEURS WHERE pseudo = ? AND mot_de_passe=?";
 
+    private static final String MODIF_UTILISATEUR = "UPDATE UTILISATEURS set pseudo = ?, nom = ?, prenom = ?, email = ?, telephone = ?," +
+            " rue = ?, code_postal = ?, ville = ?, mot_de_passe = ? WHERE pseudo = ? AND mot_de_passe = ?";
+
     public Utilisateur select(String pseudo, String mot_de_passe) {
         Connection con = null;
         PreparedStatement prepareStatement;
@@ -140,5 +143,38 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
             e.printStackTrace();
 
         }
+    }
+
+    public Utilisateur modifier(String pseudo_old, String pseudo, String mot_de_passe_old, String nom, String prenom, String email, String telephone, String rue, String code_postal,
+                                String ville, String mot_de_passe) {
+        PreparedStatement pstmt;
+        Connection con = null;
+        Utilisateur utilisateur = new Utilisateur();
+        try {
+            con = ConnectionProvider.getConnection();
+            con.setAutoCommit(false);
+            pstmt = con.prepareStatement(MODIF_UTILISATEUR);
+            pstmt.setString(1, pseudo);
+            pstmt.setString(2, nom);
+            pstmt.setString(3, prenom);
+            pstmt.setString(4, email);
+            pstmt.setString(5, telephone);
+            pstmt.setString(6, rue);
+            pstmt.setString(7, code_postal);
+            pstmt.setString(8, ville);
+            pstmt.setString(9, mot_de_passe);
+            pstmt.setString(10, pseudo_old);
+            pstmt.setString(11, mot_de_passe_old);
+            pstmt.executeUpdate();
+            con.commit();
+        } catch (Exception e) {
+            try {
+                if (con != null) {con.rollback();}
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+            e.printStackTrace();
+        }
+        return utilisateur;
     }
 }
