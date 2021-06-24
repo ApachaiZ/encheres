@@ -49,7 +49,7 @@
                 </div>
                 <div class="form-row-total">
                     <div class="col-6">
-                        <input type="submit" name="creer" class="bouton" value="Créer">
+                        <input type="submit" name="modifier" class="bouton" value="Modifier">
                     </div>
                 </div>
             </form>

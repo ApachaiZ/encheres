@@ -47,7 +47,6 @@ public class ServletModifierCompte extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/WEB-INF/accueil.jsp");// Verifier adresse du path
-        requestDispatcher.forward(request, response);
+        response.sendRedirect("accueil");// Verifier adresse du path
     }
 }
