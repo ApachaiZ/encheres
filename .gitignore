@@ -6,3 +6,5 @@
 *.xml
 .idea/gradle.xml
 *.xml
+src/main/webapp/META-INF/context.xml
+.idea/dataSources.xml
