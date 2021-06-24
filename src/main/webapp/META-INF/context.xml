@@ -1,4 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
+<<<<<<< Updated upstream
 <Context >
 <Resource
         name="jdbc/pool_cnx"
@@ -10,4 +11,18 @@
         maxIdle="30"
         maxWaitMillis="10000"
 />
+=======
+
+<Context>
+    <Resource
+            name="jdbc/pool_cnx"
+            type="javax.sql.DataSource"
+            url="jdbc:sqlserver://192.168.1.2\SQLSERVER:1433;database=ENCHERES"
+            username="toto"
+            password="toto42sh"
+            maxTotal="100"
+            maxIdle="30"
+            maxWaitMillis="10000"
+    />
+>>>>>>> Stashed changes
 </Context>
