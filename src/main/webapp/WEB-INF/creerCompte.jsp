@@ -51,7 +51,7 @@
                     </div>
                     <br>
                     <div class="col-6">
-                        <input type="submit" name="annuler" class="bouton" value="Annuler">
+                        <input type="reset" name="annuler" class="bouton" value="Annuler">
                     </div>
                 </div>
             </form>

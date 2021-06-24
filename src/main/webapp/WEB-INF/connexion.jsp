@@ -1,4 +1,4 @@
-<%--
+    ²²  <%--
   Created by IntelliJ IDEA.
   User: yannick
   Date: 22/06/2021
@@ -24,6 +24,12 @@
         <p> ENI-Enchères</p>
     </div>
     <br> <br>
+    <div class="col-sm-6 " id="mdp" style="align-content: flex-end">
+        <a href="servletOpenCreerCompte">
+            <button style="align-content: center" class="btn-toolbar btn-outline-secondary btn-lg"
+                    type="button">Créer un compte</button>
+        </a>
+    </div>
     <form class="form-detail" action="servletConnexion" method="post">
         <div class="row ms-2">
             <label for="identifiant" class="col-sm-6 col-form-label-sm">Identifiant</label>
@@ -54,11 +60,6 @@
             <br>
         </div>
     </form>
-    <div class="d-grid gap-2 col-6 mx-auto">
-        <button type="reset" style="align-content: center" class="btn-toolbar btn-outline-secondary btn-lg"
-                type="button">Créer un compte
-        </button>
-    </div>
 </div>
 <footer class="py-1 bg-dark fixed-bottom">
     <div class=row id="footer">
