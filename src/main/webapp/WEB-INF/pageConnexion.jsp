@@ -5,7 +5,7 @@
   Time: 11:53
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -24,50 +24,36 @@
     <div class=row id="header">
         <p> ENI-Enchères</p>
     </div>
-
-    <br> <br>
-
-
     <form>
         <div class="row ms-2">
             <label for="identifiant" class="col-sm-6 col-form-label-sm">Identifiant</label>
             <div class="col-sm-1">
-                <input type="identifiant" class="form-control-sm" id="identifiant">
+                <input type="text" class="form-control-sm" id="identifiant">
             </div>
         </div>
         <div class="row ms-2">
             <label for="password" class="col-sm-6 col-form-label-sm">Mot de passe</label>
             <div class="col-sm-1">
-                <input type="Mot de passe" class="form-control-sm" id="password">
+                <input type="password" class="form-control-sm" id="password">
             </div>
         </div>
-
         <div class="row m-5">
             <div class="col-sm-6 ">
-                <button type="button" style="align-content: center" class="btn-toolbar  btn-outline-secondary btn-lg">
-                    Connexion
+                <button type="submit" style="align-content: center"
+                        class="btn-toolbar btn-outline-secondary btn-lg">Connexion
                 </button>
             </div>
-            <div class="col-sm-6 " id="mdp" style="align-content: flex-end">
-                <input class="form-check-input" type="checkbox" id="gridCheck1"> Se souvenir de moi
-                <br>
-                <a href="motDePasseOublie"> Mot de passe oublié</a>
-                <p>(appelle Dane !)</p>
-            </div>
-            <div></div>
-            <br>
-            <br>
-            <br>
-            <div class="d-grid gap-2 col-6 mx-auto">
-                <button type="submit" style="align-content: center" class="btn-toolbar btn-outline-secondary btn-lg"
-                        type="button">Créer un compte
-                </button>
-            </div>
-
         </div>
     </form>
+    <br>
+    <div class="d-grid gap-2 col-6 mx-auto">
+        <a href="servletOpenCreerCompte">
+            <button class="btn-toolbar btn-outline-secondary btn-lg" style="align-content: center"
+                    type="button">Créer un compte
+            </button>
+        </a>
+    </div>
 </div>
-
 
 <footer class="py-1 bg-dark fixed-bottom">
     <div class=row id="footer">
@@ -81,7 +67,5 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
         integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
         crossorigin="anonymous"></script>
-
-</div>
 </body>
 </html>

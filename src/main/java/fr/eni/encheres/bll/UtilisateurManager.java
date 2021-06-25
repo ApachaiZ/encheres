@@ -23,7 +23,8 @@ public class UtilisateurManager {
     public Utilisateur modifier(String pseudo_old, String pseudo, String mot_de_passe_old, String mot_de_passe, String nom, String prenom, String email, String telephone, String rue, String code_postal, String ville) {
         return utilisateurDAO.modifier(pseudo_old, pseudo, mot_de_passe_old, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe);
     }
-    public Utilisateur afficher(String pseudo){
+
+    public Utilisateur afficher(String pseudo) {
         return utilisateurDAO.afficher(pseudo);
     }
 

@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet(name = "ServletOpenAfficherProfil", value = "/servletOpenAfficherProfil")
-public class ServletRechercherProfil extends HttpServlet {
+public class ServletOpenRechercherProfil extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         this.getServletContext().getRequestDispatcher("/WEB-INF/afficherProfil.jsp").forward(request, response);

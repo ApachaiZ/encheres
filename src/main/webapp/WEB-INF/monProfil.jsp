@@ -5,7 +5,7 @@
   Time: 18:03
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -13,6 +13,7 @@
           integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/nunito-font.css">
     <link rel="stylesheet" href="css/style.css"/>
+    <title>Mon Profil</title>
 </head>
 
 <body class="form-v9">
@@ -23,22 +24,22 @@
 
                 <h2>ENI-Enchères</h2>
 
-                <h3>Profil de ${utilisateur.pseudo}</h3>
+                <h3>Profil de ${requestScope.utilisateur.pseudo}</h3>
 
                 <div class="form-row-total">
                     <div class="col">
                         <br>
-                        <p>${utilisateur.nom}</p>
+                        <p>${requestScope.utilisateur.nom}</p>
                         <br>
-                        <p>${utilisateur.prenom}</p>
+                        <p>${requestScope.utilisateur.prenom}</p>
                         <br>
-                        <p>${utilisateur.email}</p>
+                        <p>${requestScope.utilisateur.email}</p>
                         <br>
-                        <p>${utilisateur.telephone}</p>
+                        <p>${requestScope.utilisateur.telephone}</p>
                         <br>
-                        <p>${utilisateur.rue}</p>
+                        <p>${requestScope.utilisateur.rue}</p>
                         <br>
-                        <p>${utilisateur.codePostal} ${utilisateur.ville}</p>
+                        <p>${requestScope.utilisateur.codePostal} ${requestScope.utilisateur.ville}</p>
                         <br>
                         <button type="submit" class="bouton">Supprimer</button>
                     </div>

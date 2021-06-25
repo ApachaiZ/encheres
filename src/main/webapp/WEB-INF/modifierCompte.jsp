@@ -20,9 +20,11 @@
                 <h2>Modification du compte</h2>
                 <div class="form-row-total">
                     <div class="col-6">
-                        <input type="text" name="pseudo" id="pseudo" class="input-text" placeholder="Votre Pseudo actuel"
+                        <input type="text" name="pseudo" id="pseudo" class="input-text"
+                               placeholder="Votre Pseudo actuel"
                                required>
-                        <input type="text" name="nouveau_pseudo" id="nouveau pseudo" class="input-text" placeholder="Votre Nouveau Pseudo"
+                        <input type="text" name="nouveau_pseudo" id="nouveau pseudo" class="input-text"
+                               placeholder="Votre Nouveau Pseudo"
                                required>
                         <input type="text" name="prenom" id="prenom" class="input-text" placeholder="Votre Prénom"
                                required>

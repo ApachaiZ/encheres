@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +14,7 @@
 <body class="form-v9">
 <div class="container-fluid">
     <h1>Accueil</h1>
-    <h2><a href="${servletCodeco}">${codeco}</a></h2>
+    <h2><a href="${requestScope.servletCodeco}">${requestScope.codeco}</a></h2>
     <h2><a href="servletOpenCreerCompte">Inscription</a></h2>
     <h2><a href="servletOpenAfficherProfil">Recherche vendeur</a></h2>
     <h2><a href="servletOpenCompte">Supprimer mon profil</a></h2>

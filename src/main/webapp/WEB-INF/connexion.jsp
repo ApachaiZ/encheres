@@ -3,9 +3,9 @@ Created by IntelliJ IDEA.
 User: yannick
 Date: 22/06/2021
 Time: 11:53
-To change this template use File | Settings | File Templates.
+ To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -24,23 +24,24 @@ To change this template use File | Settings | File Templates.
         <p> ENI-Enchères</p>
     </div>
     <br> <br>
-    <div class="col-sm-6 " id="mdp" style="align-content: flex-end">
+    <div class="col-sm-6 " style="align-content: flex-end">
         <a href="servletOpenCreerCompte">
             <button style="align-content: center" class="btn-toolbar btn-outline-secondary btn-lg"
-                    type="button">Créer un compte</button>
+                    type="button">Créer un compte
+            </button>
         </a>
     </div>
     <form class="form-detail" action="servletConnexion" method="post">
         <div class="row ms-2">
             <label for="identifiant" class="col-sm-6 col-form-label-sm">Identifiant</label>
             <div class="col-sm-1">
-                <input type="identifiant" name="pseudo" class="form-control-sm" id="identifiant">
+                <input class="form-control-sm" id="identifiant" name="pseudo" type="text">
             </div>
         </div>
         <div class="row ms-2">
             <label for="password" class="col-sm-6 col-form-label-sm">Mot de passe</label>
             <div class="col-sm-1">
-                <input type="Mot de passe" name="mot_de_passe" class="form-control-sm" id="password">
+                <input type="password" name="mot_de_passe" class="form-control-sm" id="password">
             </div>
         </div>
         <div class="row m-5">
@@ -49,15 +50,6 @@ To change this template use File | Settings | File Templates.
                     Connexion
                 </button>
             </div>
-            <div class="col-sm-6 " id="mdp" style="align-content: flex-end">
-                <input class="form-check-input" type="checkbox" id="gridCheck1"> Se souvenir de moi
-                <br>
-                <a href="motDePasseOublie"> Mot de passe oublié</a>
-            </div>
-            <div></div>
-            <br>
-            <br>
-            <br>
         </div>
     </form>
 </div>
@@ -72,6 +64,5 @@ To change this template use File | Settings | File Templates.
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
         integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
         crossorigin="anonymous"></script>
-</div>
 </body>
 </html>

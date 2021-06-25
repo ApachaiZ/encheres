@@ -1,4 +1,5 @@
 package fr.eni.encheres.dal.dao;
+
 import fr.eni.encheres.bo.Utilisateur;
 
 public interface UtilisateurDAO {
@@ -8,7 +9,7 @@ public interface UtilisateurDAO {
     Utilisateur select(String pseudo, String mot_de_passe);
 
     Utilisateur modifier(String pseudo_old, String mot_de_passe_old, String pseudo, String nom, String prenom, String email, String telephone, String rue,
-                        String code_postal, String ville, String mot_de_passe);
+                         String code_postal, String ville, String mot_de_passe);
 
     Utilisateur afficher(String pseudo);
 

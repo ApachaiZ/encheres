@@ -5,20 +5,16 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet(name = "Accueil", value = "/accueil")
 public class ServletOpenAccueil extends HttpServlet {
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        HttpSession session = request.getSession(false);
-        if (session == null) {
+        if (request.getSession(false) == null) {
             request.setAttribute("codeco", "Connexion");
             request.setAttribute("servletCodeco", "servletOpenConnexion");
-        }
-        else {
+        } else {
             request.setAttribute("codeco", "Deconnexion");
             request.setAttribute("servletCodeco", "servletOpenDeconnexion");
         }

@@ -38,8 +38,7 @@ public class ServletConnexion extends HttpServlet {
                 System.out.println(utilisateur.getPseudo());
                 System.out.println(utilisateur.getPseudo());
 
-                HttpSession session;
-                session = request.getSession();
+                HttpSession session = request.getSession();
                 session.setAttribute("utilisateur", utilisateur);
                 if (utilisateur.getPseudo() == null)
                     session.invalidate();

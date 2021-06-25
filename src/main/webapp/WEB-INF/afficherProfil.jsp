@@ -5,7 +5,7 @@
   Time: 17:17
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
     <title>Affichage du profil</title>
@@ -24,8 +24,8 @@
 
                 <h2>ENI-Enchères</h2>
 
-                <input type="text" name="pseudo" id="pseudo" class="input-text" placeholder="Vendeur recherché"
-                       required>
+                <input type="text" name="pseudo" id="pseudo" class="input-text"
+                       placeholder="Vendeur recherché" required>
                 <div class="row m-5">
                     <div class="col-sm-6 ">
                         <button type="submit" style="align-content: center"
@@ -33,23 +33,23 @@
                         </button>
                     </div>
                 </div>
-                <h3>Profil de ${pseudoProfil}</h3>
+                <h3>Profil de ${requestScope.pseudoProfil}</h3>
 
                 <div class="form-row-total">
                     <div class="col">
-                        <p>${pseudoProfil}</p>
+                        <p>${requestScope.pseudoProfil}</p>
                         <br>
-                        <p>${nomProfil}</p>
+                        <p>${requestScope.nomProfil}</p>
                         <br>
-                        <p>${prenomProfil}</p>
+                        <p>${requestScope.prenomProfil}</p>
                         <br>
-                        <p>${emailProfil}</p>
+                        <p>${requestScope.emailProfil}</p>
                         <br>
-                        <p>${telephoneProfil}</p>
+                        <p>${requestScope.telephoneProfil}</p>
                         <br>
-                        <p>${rueProfil}</p>
+                        <p>${requestScope.rueProfil}</p>
                         <br>
-                        <p>${codePostalProfil} ${villeProfil}</p>
+                        <p>${requestScope.codePostalProfil} ${requestScope.villeProfil}</p>
                         <br>
                         <a href="accueil">
                             <button type="button" class="bouton">Retour</button>

@@ -14,10 +14,13 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 
     private static final String SELECT_UTILISATEUR = "SELECT no_utilisateur, pseudo, nom, prenom, email, telephone, rue, code_postal, " +
             "ville, mot_de_passe, credit, administrateur FROM UTILISATEURS WHERE pseudo = ? AND mot_de_passe = ?";
+
     private static final String INSERT_UTILISATEUR = "INSERT INTO UTILISATEURS (pseudo, nom, prenom, email, telephone, rue, code_postal," +
             " ville, mot_de_passe, credit, administrateur) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+
     private static final String AUTRE_PROFIL = "SELECT  pseudo, nom, prenom, email, telephone, rue, code_postal, ville, telephone " +
             "from UTILISATEURS where pseudo = ?";
+
     private static final String DELETE = "DELETE FROM UTILISATEURS WHERE pseudo = ? AND mot_de_passe=?";
 
     private static final String MODIF_UTILISATEUR = "UPDATE UTILISATEURS set pseudo = ?, nom = ?, prenom = ?, email = ?, telephone = ?," +
@@ -25,14 +28,14 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 
     public Utilisateur select(String pseudo, String mot_de_passe) {
         Connection con = null;
-        PreparedStatement prepareStatement;
+        PreparedStatement pstmt;
         Utilisateur utilisateur = new Utilisateur();
         try {
             con = ConnectionProvider.getConnection();
-            prepareStatement = con.prepareStatement(SELECT_UTILISATEUR);
-            prepareStatement.setString(1, pseudo);
-            prepareStatement.setString(2, mot_de_passe);
-            ResultSet resultSet = prepareStatement.executeQuery();
+            pstmt = con.prepareStatement(SELECT_UTILISATEUR);
+            pstmt.setString(1, pseudo);
+            pstmt.setString(2, mot_de_passe);
+            ResultSet resultSet = pstmt.executeQuery();
             if (resultSet.next()) {
                 utilisateur = new Utilisateur();
                 utilisateur.setNo_utilisateur(resultSet.getInt("no_utilisateur"));
@@ -102,13 +105,13 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
     }
 
     public Utilisateur afficher(String pseudo) {
-        PreparedStatement prepareStatement;
+        PreparedStatement pstmt;
         Utilisateur utilisateur = new Utilisateur();
         try {
             Connection con = ConnectionProvider.getConnection();
-            prepareStatement = con.prepareStatement(AUTRE_PROFIL);
-            prepareStatement.setString(1, pseudo);
-            ResultSet resultSet = prepareStatement.executeQuery();
+            pstmt = con.prepareStatement(AUTRE_PROFIL);
+            pstmt.setString(1, pseudo);
+            ResultSet resultSet = pstmt.executeQuery();
 
             if (resultSet.next()) {
                 utilisateur = new Utilisateur();
@@ -129,15 +132,15 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 
     public void supprimerUtilisateur(String pseudo, String mot_de_passe) {
         Connection con;
-        PreparedStatement prepareStatement;
+        PreparedStatement pstmt;
 
         try {
             con = ConnectionProvider.getConnection();
             con.setAutoCommit(false);
-            prepareStatement = con.prepareStatement(DELETE);
-            prepareStatement.setString(1, pseudo);
-            prepareStatement.setString(2, mot_de_passe);
-            prepareStatement.executeUpdate();
+            pstmt = con.prepareStatement(DELETE);
+            pstmt.setString(1, pseudo);
+            pstmt.setString(2, mot_de_passe);
+            pstmt.executeUpdate();
             con.commit();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -169,7 +172,9 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
             con.commit();
         } catch (Exception e) {
             try {
-                if (con != null) {con.rollback();}
+                if (con != null) {
+                    con.rollback();
+                }
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
